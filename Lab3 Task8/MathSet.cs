@@ -32,7 +32,7 @@ namespace Lab3_Task8
             string outMessage = "";
             foreach (int i in this.set)
             {
-                outMessage += i + " ";
+                outMessage += $"{i} ";
             }
             return outMessage;
         }
@@ -40,12 +40,45 @@ namespace Lab3_Task8
         public static MathSet operator+(MathSet firstSet, MathSet secondSet)
         {
             string form = "";
-            for (int i = 0; i < firstSet.set.Length; i++)
+            foreach (int i in firstSet.set)
             {
-                form += firstSet.set[i] + " ";
-
+                form += $"{i} ";
             }
-            return outMathSet;
+            foreach(int i in secondSet.set)
+            {
+                if (!firstSet.set.Contains(i))
+                {
+                    form += $"{i} ";
+                }
+            }
+            return new MathSet(form);
         }
+
+        public static MathSet operator*(MathSet firstSet, MathSet secondSet)
+        {
+            string form = "";
+            foreach(int i in firstSet.set)
+            {
+                if (secondSet.set.Contains(i))
+                {
+                    form += $"{i} ";
+                }
+            }
+            return new MathSet(form);
+        }
+
+        public static MathSet operator -(MathSet firstSet, MathSet secondSet)
+        {
+            string form = "";
+            foreach(int i in firstSet.set)
+            {
+                if (!secondSet.set.Contains(i))
+                {
+                    form += $"{i} ";
+                }
+            }
+            return new MathSet(form);
+        }
+
     }
 }
