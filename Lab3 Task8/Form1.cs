@@ -16,5 +16,21 @@ namespace Lab3_Task8
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private string Calculate()
+        {
+            
+            return;
+        }
     }
 }

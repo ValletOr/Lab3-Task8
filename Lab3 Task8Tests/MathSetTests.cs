@@ -70,14 +70,5 @@ namespace Lab3_Task8.Tests
             MathSet c = a - b;
             Assert.AreEqual("1 2 3 4 5 6 8 9 10 ", c.Verbose());
         }
-
-        [TestMethod()]
-        public void NumMinusObj()
-        {
-            MathSet a = new MathSet("1 2 3 4 5 6 7 8 9 10");
-            int b = 7;
-            MathSet c = b - a;
-            Assert.AreEqual("1 2 3 4 5 6 8 9 10 ", c.Verbose());
-        }
     }
 }

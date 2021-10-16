@@ -103,9 +103,5 @@ namespace Lab3_Task8
             }
             return new MathSet(form);
         }
-        public static MathSet operator -(int num, MathSet secondSet)
-        {
-            return secondSet - num;
-        }
     }
 }
