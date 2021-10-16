@@ -34,6 +34,7 @@ namespace Lab3_Task8
             this.label1 = new System.Windows.Forms.Label();
             this.operationBox = new System.Windows.Forms.ComboBox();
             this.resultTextBox = new System.Windows.Forms.TextBox();
+            this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -83,11 +84,21 @@ namespace Lab3_Task8
             this.resultTextBox.Size = new System.Drawing.Size(471, 25);
             this.resultTextBox.TabIndex = 4;
             // 
+            // helpButton
+            // 
+            this.helpButton.Location = new System.Drawing.Point(404, 31);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(82, 55);
+            this.helpButton.TabIndex = 5;
+            this.helpButton.Text = "Задача";
+            this.helpButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 133);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.operationBox);
             this.Controls.Add(this.label1);
@@ -108,6 +119,7 @@ namespace Lab3_Task8
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox operationBox;
         private System.Windows.Forms.TextBox resultTextBox;
+        private System.Windows.Forms.Button helpButton;
     }
 }
 
