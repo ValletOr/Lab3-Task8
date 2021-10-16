@@ -23,12 +23,16 @@ namespace Lab3_Task8
             if (check == "")
             {
                 textBox1.BackColor = DefaultBackColor;
+                textBox2.Enabled = true;
+                operationBox.Enabled = true;
                 resultTextBox.Text = Calculate();
             }
             else
             {
                 textBox1.BackColor = Color.Red;
-                resultTextBox.Text = $"Исключение в первом поле. Код исключения: {check}";
+                textBox2.Enabled = false;
+                operationBox.Enabled = false;
+                resultTextBox.Text = $"Ошибка в первом поле: {check}";
             }
         }
 
@@ -38,12 +42,16 @@ namespace Lab3_Task8
             if (check == "")
             {
                 textBox2.BackColor = DefaultBackColor;
+                textBox1.Enabled = true;
+                operationBox.Enabled = true;
                 resultTextBox.Text = Calculate();
             }
             else
             {
                 textBox2.BackColor = Color.Red;
-                resultTextBox.Text = $"Исключение во втором поле. Код исключения: {check}";
+                textBox1.Enabled = false;
+                operationBox.Enabled = false;
+                resultTextBox.Text = $"Ошибка во втором поле: {check}";
             }
         }
 
@@ -77,6 +85,10 @@ namespace Lab3_Task8
             try
             {
                 int[] tempMass = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
+                if(tempMass.Distinct().Count() != tempMass.Length)
+                {
+                    throw new Exception("В множестве есть повторяющиеся элементы");
+                }
             }
             catch (Exception e)
             {
@@ -84,6 +96,41 @@ namespace Lab3_Task8
                 return outMessaage;
             }
             return outMessaage;
+        }
+
+        private void operationBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resultTextBox.Text = Calculate();
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Множество целых чисел. \n1)Объединение двух множеств(как сумма множеств)\n2)Пересечение двух множеств(как произведение множеств)\n3)Разность двух множеств\n4)Добавление элемента к множеству(как сумма с числом)\n5)Удаление элемента из множества(как разность с числом)");
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                textBox2.Focus();
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                operationBox.Focus();
+                operationBox.DroppedDown = true;
+            }
+        }
+
+        private void operationBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                textBox1.Focus();
+            }
         }
     }
 }

@@ -41,17 +41,19 @@ namespace Lab3_Task8
             // 
             this.textBox1.Location = new System.Drawing.Point(16, 31);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(327, 25);
+            this.textBox1.Size = new System.Drawing.Size(421, 25);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(16, 62);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(327, 25);
+            this.textBox2.Size = new System.Drawing.Size(421, 25);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label1
             // 
@@ -64,40 +66,42 @@ namespace Lab3_Task8
             // 
             // operationBox
             // 
+            this.operationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.operationBox.FormattingEnabled = true;
             this.operationBox.Items.AddRange(new object[] {
             "+",
             "*",
             "-"});
-            this.operationBox.Location = new System.Drawing.Point(349, 46);
+            this.operationBox.Location = new System.Drawing.Point(443, 47);
             this.operationBox.Name = "operationBox";
             this.operationBox.Size = new System.Drawing.Size(49, 25);
             this.operationBox.TabIndex = 3;
-            this.operationBox.Text = "+";
+            this.operationBox.SelectedIndexChanged += new System.EventHandler(this.operationBox_SelectedIndexChanged);
+            this.operationBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.operationBox_KeyPress);
             // 
             // resultTextBox
             // 
-            this.resultTextBox.Location = new System.Drawing.Point(16, 93);
+            this.resultTextBox.Location = new System.Drawing.Point(16, 128);
             this.resultTextBox.Name = "resultTextBox";
             this.resultTextBox.ReadOnly = true;
-            this.resultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.resultTextBox.Size = new System.Drawing.Size(471, 25);
+            this.resultTextBox.Size = new System.Drawing.Size(564, 25);
             this.resultTextBox.TabIndex = 4;
             // 
             // helpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(404, 31);
+            this.helpButton.Location = new System.Drawing.Point(498, 32);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(82, 55);
             this.helpButton.TabIndex = 5;
             this.helpButton.Text = "Задача";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 133);
+            this.ClientSize = new System.Drawing.Size(592, 165);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.operationBox);
