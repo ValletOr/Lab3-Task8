@@ -16,10 +16,6 @@ namespace Lab3_Task8
         {
             this.set = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToArray();
         }
-        public MathSet(int[] input)
-        {
-            this.set = input;
-        }
 
         //Методы
 
@@ -80,5 +76,36 @@ namespace Lab3_Task8
             return new MathSet(form);
         }
 
+        public static MathSet operator+(MathSet firstSet, int num)
+        {
+            string form = "";
+            foreach (int i in firstSet.set)
+            {
+                form += $"{i} ";
+            }
+            form += $"{num} ";
+            return new MathSet(form);
+        }
+        public static MathSet operator+(int num, MathSet secondSet)
+        {
+            return secondSet + num;
+        }
+        
+        public static MathSet operator-(MathSet firstSet, int num)
+        {
+            string form = "";
+            foreach (int i in firstSet.set)
+            {
+                if (i != num)
+                {
+                    form += $"{i} ";
+                }
+            }
+            return new MathSet(form);
+        }
+        public static MathSet operator -(int num, MathSet secondSet)
+        {
+            return secondSet - num;
+        }
     }
 }
