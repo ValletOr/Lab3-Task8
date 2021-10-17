@@ -15,6 +15,9 @@ namespace Lab3_Task8
         public Form1()
         {
             InitializeComponent();
+            textBox1.Text = Properties.Settings.Default.textBox1;
+            textBox2.Text = Properties.Settings.Default.textBox2;
+            operationBox.SelectedItem = Properties.Settings.Default.operationBox;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -25,6 +28,8 @@ namespace Lab3_Task8
                 textBox1.BackColor = DefaultBackColor;
                 textBox2.Enabled = true;
                 operationBox.Enabled = true;
+                Properties.Settings.Default.textBox1 = textBox1.Text;
+                Properties.Settings.Default.Save();
                 resultTextBox.Text = Calculate();
             }
             else
@@ -44,6 +49,8 @@ namespace Lab3_Task8
                 textBox2.BackColor = DefaultBackColor;
                 textBox1.Enabled = true;
                 operationBox.Enabled = true;
+                Properties.Settings.Default.textBox2 = textBox2.Text;
+                Properties.Settings.Default.Save();
                 resultTextBox.Text = Calculate();
             }
             else
@@ -100,6 +107,8 @@ namespace Lab3_Task8
 
         private void operationBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Properties.Settings.Default.operationBox = operationBox.Text;
+            Properties.Settings.Default.Save();
             resultTextBox.Text = Calculate();
         }
 
