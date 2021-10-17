@@ -35,6 +35,7 @@ namespace Lab3_Task8
             this.operationBox = new System.Windows.Forms.ComboBox();
             this.resultTextBox = new System.Windows.Forms.TextBox();
             this.helpButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -60,9 +61,9 @@ namespace Lab3_Task8
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(475, 19);
+            this.label1.Size = new System.Drawing.Size(467, 19);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Введите два множества числел (через пробел) или множество и число";
+            this.label1.Text = "Введите два множества чисел (через пробел) или множество и число";
             // 
             // operationBox
             // 
@@ -97,11 +98,21 @@ namespace Lab3_Task8
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Результат:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 165);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.resultTextBox);
             this.Controls.Add(this.operationBox);
@@ -124,6 +135,7 @@ namespace Lab3_Task8
         private System.Windows.Forms.ComboBox operationBox;
         private System.Windows.Forms.TextBox resultTextBox;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Label label2;
     }
 }
 
