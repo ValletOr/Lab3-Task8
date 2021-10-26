@@ -141,5 +141,11 @@ namespace Lab3_Task8
                 textBox1.Focus();
             }
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+        }
     }
 }
